@@ -1,0 +1,16 @@
+# Ignore all image files
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# Ignore all XML files
+*.xml
+
+# Ignore all pretrained weights
+*.pth
+
+# Ignore a specific file (replace "filename.ext" with the actual filename and extension)
+macro-dreamer-385006-681ee78a9562.json
+keys.py
+quickstart-file.py

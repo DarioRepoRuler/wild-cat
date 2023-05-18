@@ -1,0 +1,5 @@
+# ninja log v5
+1	6672	1681477308221505052	/home/dario/Documents/CAT/models/ops/build/temp.linux-x86_64-cpython-37/home/dario/Documents/CAT/models/ops/src/cpu/ms_deform_attn_cpu.o	fab39c9458771955
+0	13243	1681477314789780763	/home/dario/Documents/CAT/models/ops/build/temp.linux-x86_64-cpython-37/home/dario/Documents/CAT/models/ops/src/cuda/ms_deform_attn_cuda.o	1bebfae92c8e37e9
+1	16389	1681477317933915470	/home/dario/Documents/CAT/models/ops/build/temp.linux-x86_64-cpython-37/home/dario/Documents/CAT/models/ops/src/vision.o	57f4d851708f1ef0
+3	7304	1681477480698462144	/home/dario/Documents/CAT/models/ops/build/temp.linux-x86_64-cpython-37/home/dario/Documents/CAT/models/ops/src/cuda/ms_deform_attn_cuda.o	1bebfae92c8e37e9
