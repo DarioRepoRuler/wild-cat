@@ -1,17 +1,8 @@
-<<<<<<< HEAD
-# wild-cat
-Web-Integrated LoCalization and Detection of Unknown Objects with CAT
-=======
-# [CAT: LoCalization and IdentificAtion Cascade Detection Transformer for Open-World Object Detection (CVPR2023)](https://arxiv.org/abs/2301.01970v6)
+# [WILD- CAT: Web-Integrated LoCalization and Detection of Unknown Objects with CAT]
 
 
 # Abstract
-Open-world object detection (OWOD), as a more general and challenging goal, requires the model trained from data on known objects to detect both known and unknown objects and incrementally learn to identify these unknown objects. For existing works which employ standard detection framework and fixed pseudo-labelling mechanism
-(PLM), we observe the hindering problems. (𝑖) The inclusion of detecting unknown objects substantially reduces the model’s ability to detect known ones. (𝑖𝑖) The PLM does not adequately utilize the priori knowledge of inputs. (𝑖𝑖𝑖) The fixed manner of PLM cannot guarantee that the model is trained in the right direction. We observe that humans subconsciously prefer to focus on all foreground objects and then identify each one in detail, rather than localize and identify a single object simultaneously, for alleviating the confusion. This motivates us to propose a novel solution called CAT: LoCalization and IdentificAtion Cascade Detection Transformer which decouples the detection process via two cascade transformer decoders. In the meanwhile, we propose the self-adaptive pseudo-labelling mechanism which combines the model-driven with input-driven PLM and self-adaptively generates robust pseudo-labels for unknown objects, significantly improving the ability of CAT to retrieve unknown objects. Comprehensive experiments on two benchmark datasets, 𝑖.𝑒., MS-COCO and PASCAL VOC, show that our model outperforms the state-of-the-art in terms of all metrics in the task of OWOD, incremental object detection (IOD) and open-set detection.
-
-
-
-![figure2](https://user-images.githubusercontent.com/104605826/227930146-37bdf85c-47b9-4b8a-b2b4-879ddd4a84f2.png)
+Detecting and recognizing unknown objects in images remains a challenge in computer vision, particularly for service robots. This paper proposes a solution called WILD-CAT (Web-Integrated LoCalization and Detection of Unknown Objects with CAT  ) that automates the annotation process by leveraging image reverse search engines. The proposed method combines the LoCalization and Identification Cascade Detection Transformer ([CAT](https://github.com/xiaomabufei/CAT)), with web-based image reverse search to annotate unknown objects. Experimental results with never before seen objects validate the effectiveness of WILD-CAT in accurately detecting and labelling unknown objects.
 
 
 # Installation
@@ -40,138 +31,22 @@ python test.py
 ```
 
 
-# Dataset & Results
-
-### OWOD proposed splits
-<br>
-<p align="center" ><img width='500' src = "https://imgur.com/9bzf3DV.png"></p> 
-<br>
-
-### Results
-
-<table align="center">
-    <tr>
-        <th> </th>
-        <th align="center" colspan=2>Task1</th>
-        <th align="center" colspan=2>Task2</th>
-        <th align="center" colspan=2>Task3</th>
-        <th align="center" colspan=1>Task4</th>
-    </tr>
-    <tr>
-        <td align="left">Method</td>
-        <td align="center">U-Recall</td>
-        <td align="center">mAP</td>
-        <td align="center">U-Recall</td>
-        <td align="center">mAP</td>
-        <td align="center">U-Recall</td>
-        <td align="center">mAP</td>
-        <td align="center">mAP</td>
-    </tr>
-    <tr>
-        <td align="left">ORE-EBUI</td>
-        <td align="center">4.9</td>
-        <td align="center">56.0</td>
-        <td align="center">2.9</td>
-        <td align="center">39.4</td>
-        <td align="center">3.9</td>
-        <td align="center">29.7</td>
-        <td align="center">25.3</td>
-    </tr>
-    <tr>
-        <td align="left">OW-DETR</td>
-        <td align="center">7.5</td>
-        <td align="center">59.2</td>
-        <td align="center">6.2</td>
-        <td align="center">42.9</td>
-        <td align="center">5.7</td>
-        <td align="center">30.8</td>
-        <td align="center">27.8</td>
-    </tr>
-    <tr>
-        <td align="left">CAT</td>
-        <td align="center">23.7</td>
-        <td align="center">60.0</td>
-        <td align="center">19.1</td>
-        <td align="center">44.1</td>
-        <td align="center">24.4</td>
-        <td align="center">34.8</td>
-        <td align="center">30.4</td>
-    </tr>
-</table>
-
-### Weights
-
-[T1 weight](https://drive.google.com/file/d/1oBD-y5M2ptk-cLrLaUpWxdP03Jig4yGk/view?usp=sharing)      |      [T2_ft weight](https://drive.google.com/file/d/1bHYjcJdp67ndcVw6VP_CZ5IY90eaf2HN/view?usp=sharing)      |      [T3_ft weight](https://drive.google.com/file/d/1vhJC9MZU7K9HssihhMQ_BcqIlDBECbn2/view?usp=sharing)      |      [T4_ft weight](https://drive.google.com/file/d/1d766FdmIc07zaWlbW1slCQGZuQmggEM3/view?usp=sharing)
-
-### OWDETR proposed splits
-
-<br>
-<p align="center" ><img width='500' src = "https://imgur.com/RlqbheH.png"></p> 
-<br>
-
-### Results
-
-<table align="center">
-    <tr>
-        <th> </th>
-        <th align="center" colspan=2>Task1</th>
-        <th align="center" colspan=2>Task2</th>
-        <th align="center" colspan=2>Task3</th>
-        <th align="center" colspan=1>Task4</th>
-    </tr>
-    <tr>
-        <td align="left">Method</td>
-        <td align="center">U-Recall</td>
-        <td align="center">mAP</td>
-        <td align="center">U-Recall</td>
-        <td align="center">mAP</td>
-        <td align="center">U-Recall</td>
-        <td align="center">mAP</td>
-        <td align="center">mAP</td>
-    </tr>
-    <tr>
-        <td align="left">ORE-EBUI</td>
-        <td align="center">1.5</td>
-        <td align="center">61.4</td>
-        <td align="center">3.9</td>
-        <td align="center">40.6</td>
-        <td align="center">3.6</td>
-        <td align="center">33.7</td>
-        <td align="center">31.8</td>
-    </tr>
-    <tr>
-        <td align="left">OW-DETR</td>
-        <td align="center">5.7</td>
-        <td align="center">71.5</td>
-        <td align="center">6.2</td>
-        <td align="center">43.8</td>
-        <td align="center">6.9</td>
-        <td align="center">38.5</td>
-        <td align="center">33.1</td>
-    </tr>
-    <tr>
-        <td align="left">CAT</td>
-        <td align="center">24.0</td>
-        <td align="center">74.2</td>
-        <td align="center">23.0</td>
-        <td align="center">50.7</td>
-        <td align="center">24.6</td>
-        <td align="center">45.0</td>
-        <td align="center">42.8</td>
-    </tr>
-</table>
-
 ### Weights
 
 [T1 weight](https://drive.google.com/file/d/1Q9e2bhZ3-VvuOrEGN71SHUBwwhc6qS8q/view?usp=sharing)      |      [T2_ft weight](https://drive.google.com/file/d/1XLOuVnAW5z7Eo_13iy-Ri_SzkcO_2gok/view?usp=sharing)      |      [T3_ft weight](https://drive.google.com/file/d/1XDMU2uulDUFGFyV0UIrU8D9HVBGeDTbh/view?usp=sharing)      |      [T4_ft weight](https://drive.google.com/file/d/1bq5yqwNKKgXZiRrfonda7mNIWislmmW7/view?usp=sharing)
 
 ### Dataset Preparation
 
-The splits are present inside `data/VOC2007/CAT/ImageSets/` folder.
+#### Custom made Pictures
+This code project supports custom made pictures. Therefore the custom made pictures should be placed in `data/OWDETR/VOC2007/JPEGImages`. But be aware in order to process this pictures without any target data a few different steps are necessary to evaluate. Please refer to the evaluation section.
+
+#### Large Datasets
+
+The splits are present inside `data/OWDETR/VOC2007/ImageSets/` folder.
 1. Make empty `JPEGImages` and `Annotations` directory.
 ```
 mkdir data/VOC2007/CAT/JPEGImages/
-mkdir data/VOC2007/CAT/Annotations_selective/
+mkdir data/VOC2007/CAT/Annotations/
 ```
 2. Download the COCO Images and Annotations from [coco dataset](https://cocodataset.org/#download).
 3. Unzip train2017 and val2017 folder. The current directory structure should look like:
@@ -195,18 +70,14 @@ The files should be organized in the following structure:
 ```
 CAT/
 └── data/
-    └── VOC2007/
-        └── OWOD/
+    └── OWODETR/
+        └── VOC2007/
         	├── JPEGImages
         	├── ImageSets
         	└── Annotations_selective
 ```
 
-
 Currently, Dataloader and Evaluator followed for CAT is in VOC format.
-
-
-
     
 # Training
 
@@ -226,15 +97,24 @@ sbatch run_slurm.sh
 
 # Evaluation
 
+## Large datasets
 For reproducing any of the above mentioned results please run the `run_eval.sh` file and add pretrained weights accordingly.
 
+## Custom made pictures with web support
+For evaluating the detector on custom made pictures the simple place the pictures as stated in dataset preparation in the `JPEGImages` folder. Then simple run `./run_eval_custom.sh`. This should create pseudo labels in the Annotations folder, process the pictures and search for the unknowns in the web using google, bing or the both of them. The then created output can be seen in the `/output` folder. Every picture beginning with `img_*` is the direct output of the CAT detector and every output beginning with `web_*` is a web supported/labelled output.
 
 **Note:**
 For more training and evaluation details please check the [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR) reposistory.
 
+# Web-based search
+In order to use the web searching capabilities you must create an microsoft azure account and create an [Computer Vision Ressource](https://portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision). 
+Create a python file called `key.py` and store the subcription key as `subscription_key_azure` and the endpoint as `endpoint_azure`. 
+For accessing the google cloud vision API you must creat yourselfe an google cloud account and activate the [cloud vision API](https://cloud.google.com/vision/?hl=de&_ga=2.92802013.-1946153688.1682577171&_gac=1.261494271.1683295912.Cj0KCQjw0tKiBhC6ARIsAAOXutnq2wrlX0Zv9-0Nwn1HTHQ1Ffabq6FJHz_u1amrFTIu5J-MSNTIDEoaAumHEALw_wcB). 
+
+
 # License
 
-This repository is released under the Apache 2.0 license as found in the [LICENSE](LICENSE) file.
+
 
 
 # Citation
@@ -251,10 +131,10 @@ If you use CAT, please consider citing:
 
 # Contact
 
-Should you have any question, please contact :e-mail: xiaomabufei@gmail.com
+Should you have any question, please contact :e-mail: e11806417@student.tuwien.ac.at
 
 **Acknowledgments:**
 
-CAT builds on previous works code base such as [OWDETR](https://github.com/akshitac8/ow-detr),[Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR), [Detreg](https://github.com/amirbar/DETReg), and [OWOD](https://github.com/JosephKJ/OWOD). If you found CAT useful please consider citing these works as well.
+WILD-CAT builds on the work of [CAT](https://github.com/xiaomabufei/CAT) and much other previous works as [OWDETR](https://github.com/akshitac8/ow-detr),[Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR), [Detreg](https://github.com/amirbar/DETReg), and [OWOD](https://github.com/JosephKJ/OWOD). If you found WILD-CAT useful please consider citing these works as well.
 
->>>>>>> master
+
