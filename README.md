@@ -121,10 +121,10 @@ For accessing the google cloud vision API you must creat yourselfe an google clo
 
 If you use CAT, please consider citing:
 ~~~
-@article{ma2023cat,
-  title={CAT: LoCalization and IdentificAtion Cascade Detection Transformer for Open-World Object Detection},
-  author={Ma, Shuailei and Wang, Yuefeng and Fan, Jiaqi and Wei, Ying and Li, Thomas H and Liu, Hongli and Lv, Fanbing},
-  journal={arXiv preprint arXiv:2301.01970},
+@article{dario2023cat,
+  title={Web-Enabled Object Detection with CAT: Unveiling Unknown Instances},
+  author={Dario Spoljaric, Markus Vincze},
+  journal={},
   year={2023}
 }
 ~~~
