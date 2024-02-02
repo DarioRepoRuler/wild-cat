@@ -1,4 +1,4 @@
-# [WILD- CAT: Web-Integrated LoCalization and Detection of Unknown Objects with CAT]
+# WILD- CAT: Web-Integrated LoCalization and Detection of Unknown Objects with CAT
 
 
 # Abstract
@@ -94,6 +94,12 @@ To train CAT on a slurm cluster having 2 nodes with 8 GPUS each, run
 ```bash
 sbatch run_slurm.sh
 ```
+### Training on single GPU
+To train CAT on a single GPU you can try run
+```bash
+./run_custom.sh
+```
+
 
 # Evaluation
 
@@ -101,7 +107,11 @@ sbatch run_slurm.sh
 For reproducing any of the above mentioned results please run the `run_eval.sh` file and add pretrained weights accordingly.
 
 ## Custom made pictures with web support
-For evaluating the detector on custom made pictures the simple place the pictures as stated in dataset preparation in the `JPEGImages` folder. Then simple run `./run_eval_custom.sh`. This should create pseudo labels in the Annotations folder, process the pictures and search for the unknowns in the web using google, bing or the both of them. The then created output can be seen in the `/output` folder. Every picture beginning with `img_*` is the direct output of the CAT detector and every output beginning with `web_*` is a web supported/labelled output.
+For evaluating the detector on custom made pictures the simple place the pictures as stated in dataset preparation in the `JPEGImages` folder. Then simple run 
+```bash
+./run_eval_custom.sh
+```
+This should create pseudo labels in the Annotations folder, process the pictures and search for the unknowns in the web using google, bing or the both of them. The then created output can be seen in the `/output` folder. Every picture beginning with `img_*` is the direct output of the CAT detector and every output beginning with `web_*` is a web supported/labelled output.
 
 **Note:**
 For more training and evaluation details please check the [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR) reposistory.
