@@ -3,13 +3,13 @@
 
 # Abstract
 Detecting and recognizing unknown objects in images remains a challenge in computer vision, particularly for service robots. This paper proposes a solution called WILD-CAT (Web-Integrated LoCalization and Detection of Unknown Objects with CAT  ) that automates the annotation process by leveraging image reverse search engines. The proposed method combines the LoCalization and Identification Cascade Detection Transformer ([CAT](https://github.com/xiaomabufei/CAT)), with web-based image reverse search to annotate unknown objects. Experimental results with never before seen objects validate the effectiveness of WILD-CAT in accurately detecting and labelling unknown objects.
-
+![Image Alt text](/data/concept.png)
 
 # Installation
 
 ### Requirements
 
-We have trained and tested our models on `Ubuntu 16.0`, `CUDA 10.2`, `GCC 5.4`, `Python 3.7`
+We have trained and tested our models on `Ubuntu 16.0`, `CUDA 10.2`, `GCC 5.4`, `Python 3.7`. The evaluation with pretrained weights was done using the NVIDIA Geforce GTX 960.
 
 ```bash
 conda create -n cat python=3.7 pip

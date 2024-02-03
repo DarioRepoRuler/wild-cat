@@ -5,7 +5,6 @@ Copyright (c) 2023 Dario Spoljaric, Vienna.
 All Rights Reserved.
 """
 
-
 from google_manager import detect_labels
 from bing_search import bing_annotate
 from annotator import rename_objXML, rename_objXML_1, rename_objXML_2

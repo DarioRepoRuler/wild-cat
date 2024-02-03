@@ -1,20 +1,14 @@
 # coding:utf-8
 import os
 import os.path
-import xml.dom.minidom
 import xml.etree.ElementTree as et
-import cv2
 from PIL import Image
-import skimage.data
-import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
 import selectivesearch
 import numpy as np
 import cv2
 from PIL import Image
 root = os.getcwd()
-#root_path = '/Datasets/OWOD/VOC2007/'
-##/home/dario/Documents/CAT/data/VOC2007/OWOD
+
 root_path ='/data/OWDETR/VOC2007/'
 Annotations_path =root + root_path + 'Annotations/'
 print(Annotations_path)

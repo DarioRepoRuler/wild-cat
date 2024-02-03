@@ -1,14 +1,14 @@
+"""
+This module contains a function for annotating/tagging images using the Azure/Bing Cloud Vision API.
+The main function shows how to use the annotate function to tag an image and print the results.
+Copyright (c) 2023 Dario Spoljaric, Vienna.
+All Rights Reserved.
+"""
+
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
-from azure.cognitiveservices.vision.computervision.models import OperationStatusCodes
-from azure.cognitiveservices.vision.computervision.models import VisualFeatureTypes
 from msrest.authentication import CognitiveServicesCredentials
 import os
 
-from array import array
-import os
-from PIL import Image
-import sys
-import time
 
 # Get Key out of the keys file.
 from keys import subscription_key_azure, endpoint_azure
@@ -21,6 +21,8 @@ def is_image_file(file_path):
     image_extensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp']
     _, file_extension = os.path.splitext(file_path)
     return file_extension.lower() in image_extensions
+
+
 
 
 def bing_annotate(image_path):
@@ -49,19 +51,15 @@ def bing_annotate(image_path):
     
     with open(image_path, "rb") as image_file:
         tags_result_local = computervision_client.tag_image_in_stream(image_file)
-    #print(f"local file: {image_path}")
     
     # Print results with confidence score
-    #print("Tags in the local image: ")
     if (len(tags_result_local.tags) == 0):
         print("No tags detected.")
     else:
         tags = {}
         for tag in tags_result_local.tags:
-            #print("'{}' with confidence {:.2f}% ".format(tag.name, tag.confidence * 100))
             tags[tag.name] = tag.confidence
         results[image_path] = tags 
-    #print("\nEnd of Computer Vision task.")
     
     return results
 
@@ -69,14 +67,9 @@ def bing_annotate(image_path):
 # Detect domain-specific content, Detect image types, Detect objects
 
 def main():
-    images_folder = os.path.join (os.path.dirname(os.path.abspath(__file__)), "images")
-
     PATH = os.path.join(os.getcwd(), 'output', 'unknown','20211682533384102')
-    image_paths = [os.path.join(PATH, 'unknown_20211682533384102_6.jpg'), os.path.join(PATH, 'unknown_20211682533384102_4.jpg')]
     image_path = os.path.join(PATH, 'unknown_20211682533384102_6.jpg')
-
     results = bing_annotate(image_path)
-
     print(results)
 
 if __name__ == "__main__":
