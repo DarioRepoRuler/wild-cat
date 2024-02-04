@@ -1,9 +1,16 @@
 # WILD- CAT: Web-Integrated LoCalization and Detection of Unknown Objects with CAT
+This repo is an implementation of the paper [WILD CAT](/WILD_CAT.pdf)
+
 While traditional detectors are limited to recognizing a fixed set of classes, **WILD-CAT**(Web-Integrated LoCalization and Detection of Unknown Objects with CAT), powered by the innovative transformer based ([CAT](https://github.com/xiaomabufei/CAT)) model, goes a step further. This repository leverages the unique capabilities of CAT by seamlessly integrating web-based image reverse search engines.  This repository automates the acquisition of fresh tagged data from the web, enriching the training dataset and continually refining the detector's performance. When faced with unknown objects, WILD-CAT initiates a web search for descriptions, incrementally learning and enhancing its detection capabilities.
 
 ![Image Alt text](/data/concept.png)
 
-This repo is an implementation of the paper [WILD CAT](/WILD_CAT.pdf)
+### Results
+
+
+![Image Alt text](/data/result_1.png)
+![Image Alt text](/data/result_2.png)
+
 
 # Installation
 
