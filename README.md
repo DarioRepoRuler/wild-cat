@@ -8,8 +8,8 @@ While traditional detectors are limited to recognizing a fixed set of classes, *
 ### Results
 
 
-![Result 1](/data/result_1.png)
-![Result 2](/data/result_2.png)
+![Result 1](data/result_1.png)
+![Result 2](data/result_2.png)
 
 
 # Installation
